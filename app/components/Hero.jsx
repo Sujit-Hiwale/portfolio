@@ -91,7 +91,7 @@ export default function HeroSection() {
 
         <div className="hero-image">
           <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQFsWoT9w4MPDg/profile-displayphoto-scale_200_200/B56ZmbtrJjIsAY-/0/1759254067840?e=1765411200&v=beta&t=45A1W-h9J1ImAyBr3XJ5jgAzkT28Epufs0MzQQtlN2o"
+            src="/profile.jpeg"
             className="image"
             alt="Sujit"
           />
