@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sujit Hiwale — AI/ML Engineer & Full-Stack Developer",
+  title: "Sujit Hiwale",
   description:
     "Portfolio of Sujit Hiwale showcasing AI, ML, Full-Stack development, IoT and engineering work.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
 
   robots: {

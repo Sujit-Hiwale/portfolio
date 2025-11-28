@@ -20,7 +20,7 @@ export default function Skills() {
     {
       title: "Data Analysis",
       icon: <Database size={28} />,
-      skills: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Data Cleaning", "Exploratory Analysis"],
+      skills: ["Tableau", "Power BI", "Looker Studio", "BigQuery", "Data Cleaning", "Exploratory Analysis"],
       color: "text-[#bb00ff]",
     },
     {
@@ -30,7 +30,7 @@ export default function Skills() {
       color: "text-[#00af99]",
     },
     {
-      title: "IoT & Embedded",
+      title: "IoT & Embedded Systems",
       icon: <Cpu size={28} />,
       skills: ["Arduino", "ESP32", "Raspberry Pi", "Sensors", "Hardware Integration"],
       color: "text-[#f5a623]",
