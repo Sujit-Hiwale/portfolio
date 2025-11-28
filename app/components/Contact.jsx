@@ -47,7 +47,7 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="contact-section" style={{ paddingBottom: '20vh' }}
+      className="contact-section" style={{ paddingTop: '20vh', paddingBottom: '20vh' }}
     >
       <div className="container">
         <h2 className="contact-title">Get in Touch</h2>
@@ -95,18 +95,35 @@ export default function Contact() {
         </form>
         <br />
         <div className="contact-info">
-          <div className="info-card">
+
+          {/* LOCATION */}
+          <a
+            className="info-card"
+            href="https://www.google.com/maps/search/?api=1&query=Chhatrapati+Sambhajinagar+India"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <MapPin size={24} />
             <p>Chh. Sambhajinagar, India</p>
-          </div>
-          <div className="info-card">
+          </a>
+
+          {/* PHONE */}
+          <a className="info-card" href="tel:+917264807452">
             <Phone size={24} />
             <p>+91 72648 07452</p>
-          </div>
-          <div className="info-card">
+          </a>
+
+          {/* EMAIL */}
+          <a
+            className="info-card"
+            href="mailto:sujithiwale88@gmail.com?subject=Contact%20via%20Portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Mail size={24} />
             <p>sujithiwale88@gmail.com</p>
-          </div>
+          </a>
+
         </div>
       </div>
 

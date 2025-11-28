@@ -49,7 +49,7 @@ export default function Skills() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full bg-[#0d0d0d] py-32 px-8 rounded-3xl border border-[#222] shadow-[0_0_60px_rgba(97,218,251,0.3)]"
+      className="w-full bg-[#0d0d0d] py-32 px-8 rounded-3xl"
     >
       <div className="max-w-[1200px] mx-auto text-center"  style={{  paddingTop: "25vh", paddingBottom: "25vh" }}>
 
