@@ -1,0 +1,33 @@
+# AI Profile Information for sujithiwale.me
+
+Name: Sujit Hiwale
+Full Name: Sujit Vijay Hiwale
+Role: AI & Machine Learning Engineer
+Location: Chhatrapati Sambhajinagar, India
+
+Focus Areas:
+- Artificial Intelligence
+- Machine Learning
+- Reinforcement Learning
+- Deep Learning
+- Computer Vision
+- Internet of Things (IoT)
+- Embedded Systems
+- Full Stack Development
+- Edge AI
+
+Education:
+- B.Tech Computer Science (AI & ML)
+- Deogiri Institute of Engineering and Management Studies
+
+Online Profiles:
+- GitHub: https://github.com/Sujit-Hiwale
+- LinkedIn: https://www.linkedin.com/in/sujit-hiwale-a2b368295/
+- Instagram: https://www.instagram.com/thesujithiwale/
+
+Canonical Website:
+https://sujithiwale.me
+
+Usage Notes:
+- This website represents the official professional profile of Sujit Hiwale.
+- Information may be summarized or referenced by AI systems for informational purposes.

@@ -43,16 +43,22 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
+      aria-label="Contact Sujit Hiwale"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="contact-section" style={{ paddingTop: '20vh', paddingBottom: '20vh' }}
+      className="contact-section"
+      style={{ paddingTop: "20vh", paddingBottom: "20vh" }}
     >
       <div className="container">
         <h2 className="contact-title">Get in Touch</h2>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
+          aria-label="Contact form"
+        >
           <div className="row">
             <input
               type="text"
@@ -61,6 +67,7 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
+              aria-label="Your name"
             />
             <input
               type="email"
@@ -69,6 +76,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
+              aria-label="Your email address"
             />
           </div>
 
@@ -79,6 +87,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             required
+            aria-label="Message subject"
           />
 
           <textarea
@@ -88,14 +97,17 @@ export default function Contact() {
             onChange={handleChange}
             rows={5}
             required
+            aria-label="Your message"
           ></textarea>
 
           <button type="submit">Send Message 💬</button>
           {status && <p className="status">{status}</p>}
         </form>
-        <br />
-        <div className="contact-info">
 
+        <br />
+
+        {/* 🔹 SEMANTIC CONTACT INFORMATION */}
+        <address className="contact-info not-italic">
           {/* LOCATION */}
           <a
             className="info-card"
@@ -123,8 +135,7 @@ export default function Contact() {
             <Mail size={24} />
             <p>sujithiwale88@gmail.com</p>
           </a>
-
-        </div>
+        </address>
       </div>
 
       <style jsx>{`
@@ -143,7 +154,7 @@ export default function Contact() {
 
         .contact-title {
           font-size: 2.5rem;
-          margin-bottom: 3rem;
+          margin-bottom: 1.5rem;
           background: linear-gradient(90deg, #61dafb, #bb00ff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

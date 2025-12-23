@@ -1,213 +1,196 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const CanvasParticles = dynamic(() => import("./CanvasParticles"), { ssr: false });
+import { MapPin } from "lucide-react";
 
 export default function HeroSection() {
-  const roles = ["ML Developer", "Web Developer", "IoT Enthusiast"];
-  const [index, setIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
-  const [phase, setPhase] = useState("typing");
-  const [showParticles, setShowParticles] = useState(false);
-
-  useEffect(() => {
-    const current = roles[index];
-    let speed = phase === "typing" ? 120 : phase === "deleting" ? 60 : 100;
-
-    const handle = () => {
-      if (phase === "typing") {
-        if (typedText.length < current.length) {
-          setTypedText(current.slice(0, typedText.length + 1));
-          setShowParticles(true); // start particles fade-in
-        } else {
-          setPhase("holding");
-          setTimeout(() => setPhase("deleting"), 3000);
-        }
-      } else if (phase === "deleting") {
-        if (typedText.length > 0) {
-          setTypedText(current.slice(0, typedText.length - 1));
-        } else {
-          setPhase("typing");
-          setIndex((prev) => (prev + 1) % roles.length);
-          setShowParticles(false); // start particles fade-out
-        }
-      }
-    };
-
-    const timer = setTimeout(handle, speed);
-    return () => clearTimeout(timer);
-  }, [typedText, phase, index]);
-
   return (
-    <section className="hero fade-in">
-      {/* Particles */}
-      <CanvasParticles role={roles[index]} show={showParticles} />
-
+    <section
+      className="hero"
+      aria-label="Introduction of Sujit Hiwale"
+    >
       <div className="container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Sujit Hiwale</span>
+            Sujit <span className="highlight">Hiwale</span>
           </h1>
 
-          <h2 className="role-text">
-            {typedText}
-            <span className="cursor">|</span>
+          <h2 className="hero-role">
+            AI & Machine Learning Engineer
           </h2>
 
           <p className="hero-description">
-            I specialize in blending intelligence, interactivity, and innovation—
-            creating systems that learn, connect, and transform ideas into reality.
+            I am a B.Tech Computer Science (AI & ML) student focused on reinforcement learning,
+            deep learning, and neural networks. I build intelligent platforms and AIoT systems
+            using microcontrollers and sensors, with a strong interest in socially impactful
+            and accessible technology.
           </p>
 
-          <Link href="#contact" legacyBehavior>
-            <a className="cta-btn">Contact Me</a>
-          </Link>
+          <div className="hero-actions">
+            <Link href="#contact" className="primary-btn">
+              Contact Me
+            </Link>
 
-          <div className="status-row">
-            <div className="status-item">
-              <span className="dot"></span>
-              Available for Freelancing
-            </div>
-            <div className="status-item">
-              <svg
-                className="pin"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#61dafb"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
+            <Link href="#projects" className="secondary-btn">
+              View Projects
+            </Link>
+          </div>
+
+          <div className="hero-meta">
+            <span className="availability">
+              <span className="dot" aria-hidden="true"></span>
+              Open to opportunities & collaboration
+            </span>
+
+            <span className="location">
+              <MapPin size={16} />
               Chhatrapati Sambhajinagar, India
-            </div>
+            </span>
           </div>
         </div>
 
+        {/* PROFILE IMAGE */}
         <div className="hero-image">
           <img
             src="/profile.jpeg"
-            className="image"
-            alt="Sujit"
+            alt="Sujit Hiwale, AI and Machine Learning Engineer"
           />
         </div>
       </div>
 
       <style jsx>{`
         .hero {
-          background: #0d0d0d;
-          color: white;
           min-height: 100vh;
-          position: relative;
           display: flex;
           align-items: center;
-          overflow: hidden;
+          background: #0d0d0d;
+          color: #fff;
           padding: 0 20px;
         }
-        .fade-in {
-          opacity: 0;
-          animation: fadeIn 1.2s forwards;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+
         .container {
-          max-width: 1250px;
-          margin: auto;
+          max-width: 1200px;
+          margin: 0 auto;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 50px;
-          position: relative;
-          z-index: 10;
-        }
-        .hero-title {
-          font-size: 2.8rem;
-          font-weight: 700;
-        }
-        .highlight {
-          color: #61dafb;
-          text-shadow: 0 0 12px #61dafb;
-        }
-        .role-text {
-          font-size: 2rem;
-          margin-top: 10px;
-          color: #b9daff;
-        }
-        .cursor {
-          margin-left: 6px;
-          animation: blink 0.7s infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-        .hero-description {
-          margin-top: 15px;
-          color: #d2d2d2;
-          max-width: 500px;
-        }
-        .cta-btn {
-          margin-top: 25px;
-          background: #61dafb;
-          color: #000;
-          padding: 12px 32px;
-          border-radius: 40px;
-          font-weight: 600;
-          display: inline-block;
-          transition: 0.3s ease;
-        }
-        .cta-btn:hover {
-          transform: translateY(-5px) scale(1.05);
-          background: #45b6e6;
-          text-shadow: 0 0 10px #61dafb;
-        }
-        .status-row {
-          margin-top: 28px;
-          display: flex;
-          align-items: center;
-          gap: 22px;
+          gap: 60px;
           flex-wrap: wrap;
         }
-        .status-item {
+
+        .hero-content {
+          max-width: 650px;
+        }
+
+        .hero-title {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 0.4rem;
+        }
+
+        .highlight {
+          color: #61dafb;
+        }
+
+        .hero-role {
+          font-size: 1.6rem;
+          font-weight: 500;
+          color: #b9daff;
+          margin-bottom: 1.4rem;
+        }
+
+        .hero-description {
+          font-size: 1.05rem;
+          line-height: 1.8;
+          color: #d2d2d2;
+          margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .primary-btn {
+          background: linear-gradient(90deg, #61dafb, #4fc3f7);
+          color: #000;
+          padding: 0.75rem 1.8rem;
+          border-radius: 0.7rem;
+          font-weight: 600;
+          box-shadow: 0 0 18px rgba(97, 218, 251, 0.45);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .primary-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 0 26px rgba(97, 218, 251, 0.75);
+        }
+
+        .secondary-btn {
+          border: 2px solid #61dafb;
+          padding: 0.75rem 1.8rem;
+          border-radius: 0.7rem;
+          color: #61dafb;
+          font-weight: 600;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .secondary-btn:hover {
+          background: #61dafb;
+          color: #000;
+        }
+
+        .hero-meta {
+          display: flex;
+          gap: 1.5rem;
+          align-items: center;
+          flex-wrap: wrap;
+          font-size: 0.95rem;
+          color: #cfcfcf;
+        }
+
+        .availability {
           display: flex;
           align-items: center;
-          gap: 8px;
-          font-size: 1rem;
-          color: #e0e0e0;
+          gap: 0.4rem;
         }
+
         .dot {
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           background: #21ff8a;
           box-shadow: 0 0 10px #21ff8a;
         }
-        .pin { width: 18px; height: 18px; flex-shrink: 0; }
-        .hero-image .image {
-          width: 400px;
-          border-radius: 12px;
-          box-shadow: 0 0 20px #61dafb77;
-          transition: transform 0.8s ease, box-shadow 0.3s ease;
-          transform: rotate(0deg);
-          animation: tilt 6s ease-in-out infinite alternate;
+
+        .location {
+          display: flex;
+          align-items: center;
+          gap: 0.3rem;
         }
-        .hero-image .image:hover {
-          transform: scale(1.08) rotate(5deg);
-          box-shadow: 0 0 35px #61dafb;
+
+        .hero-image img {
+          width: 360px;
+          max-width: 100%;
+          border-radius: 14px;
+          box-shadow: 0 0 30px rgba(97, 218, 251, 0.35);
         }
-        @keyframes tilt {
-          0% { transform: rotate(-3deg); }
-          50% { transform: rotate(3deg); }
-          100% { transform: rotate(-3deg); }
-        }
+
         @media (max-width: 900px) {
-          .container { flex-direction: column; text-align: center; }
-          .status-row { justify-content: center; }
-          .hero-image .image { margin-top: 40px; }
+          .container {
+            flex-direction: column-reverse;
+            text-align: center;
+          }
+
+          .hero-actions {
+            justify-content: center;
+          }
+
+          .hero-meta {
+            justify-content: center;
+          }
         }
       `}</style>
     </section>

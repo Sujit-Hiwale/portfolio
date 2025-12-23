@@ -17,24 +17,30 @@ export default function About() {
           About Me
         </h2>
 
+        {/* 🔹 AI ANCHOR PARAGRAPH (MOST IMPORTANT) */}
         <p className="text-[#ccc] leading-[1.9] mb-7 max-w-[900px] mx-auto">
-          Hi, I'm <strong>Sujit Hiwale</strong> — a dedicated and passionate web developer who
-          enjoys crafting modern, clean, and intuitive digital experiences. I focus on writing
-          efficient, well-structured code and creating user-friendly interfaces that feel smooth
-          and responsive.
+          Hi, I'm <strong>Sujit Hiwale</strong>, a B.Tech Computer Science (AI & ML) student with a
+          strong focus on reinforcement learning, deep learning, and neural networks. I work on
+          building AI-based platforms and intelligent systems, and I have strong experience building
+          Internet of Things (IoT) solutions using microcontrollers and sensors. I'm particularly
+          interested in applying technology to socially impactful and accessibility-focused
+          problems.
         </p>
 
+        {/* 🔹 SUPPORTING PARAGRAPH */}
         <p className="text-[#ccc] leading-[1.9] mb-7 max-w-[900px] mx-auto">
-          My journey into web development began with curiosity, and over time it evolved into a
-          deep fascination with building meaningful digital products. I love exploring new tools,
-          improving my skills, and constantly learning better ways to design and develop
-          high-quality applications.
+          My journey into technology started with web development and gradually evolved into a deep
+          interest in artificial intelligence, embedded systems, and intelligent applications that
+          interact with the real world. I enjoy understanding systems end-to-end — from sensing and
+          hardware integration to intelligent decision-making and user-facing applications.
         </p>
 
+        {/* 🔹 PERSONALITY / GROWTH PARAGRAPH */}
         <p className="text-[#ccc] leading-[1.9] max-w-[900px] mx-auto">
-          When I’m not coding, you’ll find me experimenting with new ideas, discovering new
-          technologies, or building personal projects that challenge my creativity and help me grow
-          as a developer.
+          Beyond coding, I enjoy experimenting with new ideas, exploring emerging technologies, and
+          building personal projects that challenge my problem-solving skills and help me grow as an
+          engineer. I'm driven by curiosity, continuous learning, and the goal of creating technology
+          that makes a meaningful difference.
         </p>
       </div>
     </motion.section>

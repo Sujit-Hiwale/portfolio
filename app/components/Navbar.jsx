@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaBars,
+  FaTimes
+} from "react-icons/fa";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,27 +16,29 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-
-        {/* Logo */}
+        {/* LOGO / IDENTITY */}
         <Link href="/" legacyBehavior>
-          <a className="logo">Sujit Hiwale</a>
+          <a
+            className="logo"
+            aria-label="Sujit Hiwale homepage"
+          >
+            Sujit Hiwale
+          </a>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="nav">
+        {/* PRIMARY NAVIGATION */}
+        <nav className="nav" aria-label="Primary navigation">
           <ul>
             <li>
               <Link href="#about" legacyBehavior>
                 <a className="nav-link">About</a>
               </Link>
             </li>
-
             <li>
               <Link href="#projects" legacyBehavior>
                 <a className="nav-link">Projects</a>
               </Link>
             </li>
-
             <li>
               <Link href="#contact" legacyBehavior>
                 <a className="nav-link">Contact</a>
@@ -39,191 +47,212 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Social Icons */}
+        {/* SOCIAL LINKS */}
         <div className="social-icons">
-          <a href="https://github.com/Sujit-Hiwale" target="_blank"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/sujit-hiwale-a2b368295/" target="_blank"><FaLinkedin /></a>
+          <a
+            href="https://github.com/Sujit-Hiwale"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sujit-hiwale-a2b368295/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="https://www.instagram.com/thesujithiwale/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram profile"
+          >
+            <FaInstagram />
+          </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button className={`menu-btn ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className="menu-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+      {/* MOBILE NAVIGATION */}
+      <div
+        id="mobile-navigation"
+        className={`mobile-menu ${menuOpen ? "show" : ""}`}
+      >
         <Link href="#about" legacyBehavior>
-          <a className="mobile-link" onClick={() => setMenuOpen(false)}>About</a>
+          <a
+            className="mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            About
+          </a>
         </Link>
 
         <Link href="#projects" legacyBehavior>
-          <a className="mobile-link" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a
+            className="mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
+          </a>
         </Link>
 
         <Link href="#contact" legacyBehavior>
-          <a className="mobile-link" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a
+            className="mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </a>
         </Link>
 
         <div className="mobile-icons">
-          <a href="https://github.com/" target="_blank"><FaGithub /></a>
-          <a href="https://linkedin.com/" target="_blank"><FaLinkedin /></a>
+          <a
+            href="https://github.com/Sujit-Hiwale"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sujit-hiwale-a2b368295/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="https://www.instagram.com/thesujithiwale/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram profile"
+          >
+            <FaInstagram />
+          </a>
         </div>
       </div>
 
       <style jsx>{`
-  .header {
-    background: #0d0d0d;
-    color: white;
-    padding: 16px 0;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    animation: fadeSlideDown 0.6s ease-out;
-  }
+        .header {
+          background: #0d0d0d;
+          color: white;
+          padding: 16px 0;
+          position: sticky;
+          top: 0;
+          z-index: 50;
+        }
 
-  @keyframes fadeSlideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        .container {
+          max-width: 1200px;
+          margin: auto;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+        .logo {
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: #61dafb;
+          text-decoration: none;
+        }
 
-  /* LOGO */
-  .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #61dafb;
-    transition: 0.3s ease;
-  }
+        .nav ul {
+          display: flex;
+          gap: 28px;
+          list-style: none;
+        }
 
-  .logo:hover {
-    text-shadow: 0 0 12px #61dafb;
-    transform: scale(1.05);
-  }
+        .nav-link {
+          color: white;
+          font-size: 1rem;
+          padding-bottom: 4px;
+          transition: color 0.2s ease;
+        }
 
-  /* NAVIGATION */
-  .nav ul {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
+        .nav-link:hover {
+          color: #b9daff;
+        }
 
-  .nav-link {
-    display: inline-block;
-    position: relative;
-    color: white;
-    font-size: 1rem;
-    padding-bottom: 4px;
-    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
-  }
+        .social-icons {
+          display: flex;
+          gap: 18px;
+          font-size: 1.4rem;
+        }
 
-  .nav-link:hover {
-    color: #b9daff;
-    text-shadow: 0 0 10px #61dafb;
-    transform: translateY(-4px) scale(1.08);
-    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-  }
+        .social-icons a {
+          color: white;
+          transition: color 0.2s ease;
+        }
 
-  /* Underline animation */
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background: #61dafb;
-    transition: width 0.3s ease;
-  }
+        .social-icons a:hover {
+          color: #61dafb;
+        }
 
-  .nav-link:hover::after {
-    width: 100%;
-  }
+        .menu-btn {
+          display: none;
+          font-size: 1.8rem;
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+        }
 
-  /* ICONS */
-  .social-icons {
-    display: flex;
-    gap: 18px;
-    font-size: 1.4rem;
-  }
+        .mobile-menu {
+          display: none;
+          flex-direction: column;
+          background: #000;
+          padding: 20px;
+          gap: 20px;
+          text-align: center;
+        }
 
-  .social-icons a {
-    color: white;
-    transition: transform 0.3s, color 0.3s;
-  }
+        .mobile-menu.show {
+          display: flex;
+        }
 
-  .social-icons a:hover {
-    color: #61dafb;
-    transform: scale(1.2);
-  }
+        .mobile-link {
+          font-size: 1.2rem;
+          color: white;
+          transition: color 0.2s ease;
+        }
 
-  /* MOBILE */
-  .menu-btn {
-    display: none;
-    font-size: 1.8rem;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+        .mobile-link:hover {
+          color: #61dafb;
+        }
 
-  .menu-btn.open {
-    transform: rotate(180deg);
-  }
+        .mobile-icons {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          font-size: 1.6rem;
+        }
 
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: #000;
-    padding: 20px;
-    gap: 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mobile-link {
-    font-size: 1.2rem;
-    color: white;
-    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
-  }
-
-  .mobile-link:hover {
-    color: #61dafb;
-    text-shadow: 0 0 12px #61dafb;
-    transform: scale(1.08);
-  }
-
-  .mobile-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 1.6rem;
-  }
-
-  @media (max-width: 768px) {
-    .nav { display: none; }
-    .social-icons { display: none; }
-    .menu-btn { display: block; }
-  }
-`}</style>
-
+        @media (max-width: 768px) {
+          .nav { display: none; }
+          .social-icons { display: none; }
+          .menu-btn { display: block; }
+        }
+      `}</style>
     </header>
   );
 }

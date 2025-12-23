@@ -6,44 +6,43 @@ export default function Projects() {
   const projects = [
     {
       title: "Trippy",
-      desc: "Trippy is a cross-platform travel and event-planning app that lets users plan personalized trips, discover local events, track budgets and coordinate with like-minded travelers — all in one unified platform.",
+      desc: "A cross-platform travel and event planning application that enables users to create personalized trip itineraries, discover local events, manage travel budgets, and collaborate with other travelers through a unified platform.",
       link: "https://github.com/Sujit-Hiwale/trippy",
       image: "https://thriftynomads.com/wp-content/uploads/2016/07/shutterstock_293482196.jpg"
     },
     {
       title: "Automated Attendance System",
-      desc: "Face recognition-based attendance tracking with secure backend, real-time dashboards, and comprehensive reporting.",
+      desc: "An AI-powered attendance management system using face recognition to automatically record attendance, backed by a secure backend with real-time dashboards and detailed reporting features.",
       link: "https://github.com/Sujit-Hiwale/Automated-Attendance",
       image: "https://www.quest-me.com/wp-content/uploads/2024/09/5-KEY-BENEFITS-OF-A-SCHOOL-QUEUE-MANAGEMENT-SYSTEM-91.jpg"
     },
     {
       title: "Job Community Portal",
-      desc: "Full-stack job marketplace connecting recruiters and candidates with advanced search, real-time chat, and notifications.",
+      desc: "A full-stack job marketplace platform connecting recruiters and job seekers, featuring advanced search and filtering, real-time notifications, role-based access, and integrated communication tools.",
       link: "https://github.com/Sujit-Hiwale/Job_Community_Portal",
       image: "https://thumbs.dreamstime.com/b/group-diverse-multiethnic-people-different-jobs-45366121.jpg"
     },
     {
       title: "HelpLink",
-      desc: "HelpLink is a web-app that allows users to request and offer help via a centralised platform — making it easier to connect people in need with volunteers or supporters.",
+      desc: "A web-based social impact platform that allows users to request help or volunteer support, designed to efficiently connect individuals in need with volunteers through a centralized system.",
       link: "https://github.com/Sujit-Hiwale/helplink",
       image: "https://mindfulmethodsforlife.com/wp-content/uploads/2024/06/How-Helping-Others-Helps-Us.jpg"
     },
     {
       title: "Movie Booking System",
-      desc: "Movie Booking System is a web app where users can browse movies, showtimes, and book tickets, while admins can manage movies, theatres, and bookings. It also provides a dashboard to track analytics like bookings and revenue.",
+      desc: "A full-stack movie ticket booking application that enables users to browse movies and showtimes, book seats, and manage reservations, with an admin dashboard for theatres, scheduling, and revenue analytics.",
       link: "https://github.com/Sujit-Hiwale/Movie_Booking_System",
       image: "https://blog.cdn.cmarix.com/blog/wp-content/uploads/2020/03/Everything-About-Online-Movie-Ticket-Booking-App-and-Website-Development-02.png"
     },
     {
       title: "Mini Drone + Object Detection",
-      desc: "ESP32-CAM powered autonomous drone with onboard object detection using optimized edge AI models.",
+      desc: "An ESP32-CAM–based autonomous mini drone integrating onboard object detection using optimized edge AI models for real-time visual inference on constrained hardware.",
       image: "https://news.mit.edu/sites/default/files/images/201707/MIT-Minidrone.jpg"
     }
   ];
 
   return (
     <>
-      {/* FORCE TOP SPACE (cannot be overridden) */}
       <div className="h-32 md:h-40" style={{  paddingTop: "8rem" }}></div>
 
       <section

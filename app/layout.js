@@ -14,21 +14,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sujit Hiwale",
+  metadataBase: new URL("https://sujithiwale.me"),
+
+  title: {
+    default: "Sujit Hiwale | AI & ML Engineer",
+    template: "%s | Sujit Hiwale",
+  },
+
   description:
-    "Portfolio of Sujit Hiwale showcasing AI, ML, Full-Stack development, IoT and engineering work.",
+    "Official portfolio of Sujit Hiwale — an AI & Machine Learning engineer working with reinforcement learning, deep learning, IoT systems, and full-stack development to build socially impactful technology.",
+
   keywords: [
     "Sujit Hiwale",
+    "Sujit Vijay Hiwale",
     "AI Engineer",
-    "ML Engineer",
-    "DL Engineer",
-    "Machine Learning",
+    "Machine Learning Engineer",
+    "Reinforcement Learning",
     "Deep Learning",
-    "Neural Network",
+    "Neural Networks",
+    "Computer Vision",
+    "Internet of Things",
+    "Embedded Systems",
+    "Edge AI",
     "Full Stack Developer",
-    "Portfolio",
-    "Next.js Developer"
+    "Next.js Developer",
+    "Portfolio"
   ],
+
+  authors: [{ name: "Sujit Hiwale" }],
+  creator: "Sujit Hiwale",
 
   alternates: {
     canonical: "https://sujithiwale.me",
@@ -51,35 +65,44 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Sujit Hiwale — Portfolio",
+    title: "Sujit Hiwale | AI & ML Engineer",
     description:
-      "Portfolio of Sujit Hiwale — AI/ML Engineering, Full-Stack Development, IoT and engineering work.",
+      "AI & ML engineering portfolio featuring reinforcement learning, deep learning, IoT systems, and full-stack applications.",
     url: "https://sujithiwale.me",
     siteName: "Sujit Hiwale Portfolio",
+    locale: "en_IN",
+    type: "profile",
     images: [
       {
-        url: "https://sujithiwale.me/profile.jpeg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Sujit Hiwale – AI & Machine Learning Engineer",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Sujit Hiwale",
+    title: "Sujit Hiwale | AI & ML Engineer",
     description:
-      "Portfolio of Sujit Hiwale — AI/ML Engineering & Full-Stack Development.",
-    images: ["https://sujithiwale.me/profile.jpeg"],
+      "AI & ML engineer working on reinforcement learning, deep learning, IoT systems, and full-stack platforms.",
+    images: ["/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-neutral-900 text-gray-100 antialiased min-h-screen`}>
-        <a href="#main" className="sr-only sr-only-focusable">Skip to content</a>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-neutral-900 text-gray-100 antialiased min-h-screen`}
+      >
+        <a href="#main" className="sr-only sr-only-focusable">
+          Skip to content
+        </a>
+
         <Background />
+
         <main id="main">{children}</main>
       </body>
     </html>
