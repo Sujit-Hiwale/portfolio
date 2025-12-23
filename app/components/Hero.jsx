@@ -26,16 +26,43 @@ export default function HeroSection() {
             and accessible technology.
           </p>
 
-          <div className="hero-actions">
-            <Link href="#contact" className="primary-btn">
-              Contact Me
+          <div className="hero-actions flex gap-4 flex-wrap mb-8">
+            <Link
+              href="#contact"
+              className="
+                relative inline-block px-8 py-3 rounded-xl font-semibold
+                bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500
+                text-black
+                shadow-lg
+                overflow-hidden
+                transition-all duration-300 ease-out
+                transform hover:scale-110 hover:-translate-y-1
+                hover:shadow-2xl
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black
+              "
+            >
+              <span className="absolute inset-0 bg-white opacity-10 rotate-45 translate-x-[-100%] hover:translate-x-[200%] transition-transform duration-500"></span>
+              <span className="relative">Contact Me</span>
             </Link>
 
-            <Link href="#projects" className="secondary-btn">
-              View Projects
+            <Link
+              href="#contact"
+              className="
+                relative inline-block px-8 py-3 rounded-xl font-semibold
+                bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500
+                text-black
+                shadow-lg
+                overflow-hidden
+                transition-all duration-300 ease-out
+                transform hover:scale-110 hover:-translate-y-1
+                hover:shadow-2xl
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black
+              "
+            >
+              <span className="absolute inset-0 bg-white opacity-10 rotate-45 translate-x-[-100%] hover:translate-x-[200%] transition-transform duration-500"></span>
+              <span className="relative">View Projects</span>
             </Link>
           </div>
-
           <div className="hero-meta">
             <span className="availability">
               <span className="dot" aria-hidden="true"></span>
@@ -125,7 +152,7 @@ export default function HeroSection() {
 
         .primary-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 0 26px rgba(97, 218, 251, 0.75);
+          box-shadow: 0 14px 26px rgba(97, 218, 251, 0.75);
         }
 
         .secondary-btn {
@@ -140,6 +167,7 @@ export default function HeroSection() {
         .secondary-btn:hover {
           background: #61dafb;
           color: #000;
+          box-shadow: 0 14px 26px rgba(97, 218, 251, 0.75);
         }
 
         .hero-meta {
