@@ -72,14 +72,6 @@ export const metadata = {
     siteName: "Sujit Hiwale Portfolio",
     locale: "en_IN",
     type: "profile",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Sujit Hiwale – AI & Machine Learning Engineer",
-      },
-    ],
   },
 
   twitter: {
@@ -87,7 +79,6 @@ export const metadata = {
     title: "Sujit Hiwale | AI & ML Engineer",
     description:
       "AI & ML engineer working on reinforcement learning, deep learning, IoT systems, and full-stack platforms.",
-    images: ["/og-image.png"],
   },
 };
 
