@@ -78,22 +78,33 @@ export const metadata = {
     card: "summary_large_image",
     title: "Sujit Hiwale | AI & ML Engineer",
     description:
-      "AI & ML engineer working on reinforcement learning, deep learning, IoT systems, and full-stack platforms.",
+      "AI & ML engineering working on reinforcement learning, deep learning, IoT systems, and full-stack platforms.",
   },
 };
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://sujithiwale.me/#website",
+  "url": "https://sujithiwale.me",
+  "name": "Sujit Hiwale Portfolio",
+  "publisher": {
+    "@id": "https://sujithiwale.me/#person"
+  }
+};
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-neutral-900 text-gray-100 antialiased min-h-screen`}
-      >
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}/>
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-neutral-900 text-gray-100 antialiased min-h-screen`}>
         <a href="#main" className="sr-only sr-only-focusable">
           Skip to content
         </a>
-
         <Background />
-
         <main id="main">{children}</main>
       </body>
     </html>

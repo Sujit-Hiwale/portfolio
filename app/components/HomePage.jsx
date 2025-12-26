@@ -26,52 +26,6 @@ export default function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfilePage",
-            "mainEntity": {
-              "@type": "Person",
-              "@id": "https://sujithiwale.me/",
-              "name": "Sujit Hiwale",
-              "alternateName": "Sujit Vijay Hiwale",
-              "url": "https://sujithiwale.me",
-              "image": "https://sujithiwale.me/profile.jpeg",
-              "jobTitle": "AI & Machine Learning Engineer",
-              "description":
-                "AI & ML engineering student with experience in reinforcement learning, deep learning, and IoT systems, focused on building socially impactful and accessible technologies.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Chhatrapati Sambhajinagar",
-                "addressCountry": "IN"
-              },
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Deogiri Institute of Engineering and Management Studies"
-              },
-              "knowsAbout": [
-                "Artificial Intelligence",
-                "Machine Learning",
-                "Reinforcement Learning",
-                "Deep Learning",
-                "Computer Vision",
-                "Internet of Things",
-                "Embedded Systems",
-                "Full Stack Development",
-                "Edge AI"
-              ],
-              "sameAs": [
-                "https://github.com/Sujit-Hiwale",
-                "https://www.linkedin.com/in/sujit-hiwale-a2b368295/",
-                "https://www.instagram.com/thesujithiwale/"
-              ]
-            }
-          }),
-        }}
-      />
-
       <Navbar />
       <Hero />
       <About />
